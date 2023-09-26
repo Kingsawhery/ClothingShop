@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* a,
+li {
+  text-decoration: none !important;
+  color: #ddd;
+  cursor: pointer;
+  list-style: none;
+}
+
+.mystyle {
+  color: #333;
+}
+
+#box-contact {
+  background-color: rgba(221, 221, 221, 0.4);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  display: none;
+}
+#box-contact .card-contact {
+  border-radius: 8px;
+  background: #333;
+}
+#box-contact .card-contact form {
+  padding: 40px;
+}
+#box-contact .card-contact form .header-contact {
+  display: flex;
+  justify-content: space-between;
+}
+#img-bg {
+  background: url("../../assets/images/img1.webp") no-repeat;
+  height: 100%;
+}
+
+#footer {
+  height: 100%;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  top: 0;
+  bottom: 0;
+  display: block;
+}
+#footer .contact {
+  padding-bottom: 30px;
+  text-align: center;
+}
+#footer .contact h2 {
+  padding: 20px;
+}
+#footer .contact-child {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 100px;
+}
+#footer .contact-child .link {
+  display: block;
+  width: 13%;
+  text-align: start;
+}
+#footer .contact-child .link a {
+  display: block;
+  padding: 0.3em;
+  color: #333;
+}
+#footer .contact-child .link i {
+  padding-right: 10px;
+}
+#footer .contact-child .form .row .col {
+  float: left;
+  padding: 0 0px 12px 8px;
+}
+#footer .contact-child .form .row .col-half {
+  width: 50%;
+}
+#footer .contact-child .form .row .col-full {
+  width: 100%;
+}
+#footer .contact-child .form .row .col-full input {
+  width: 100%;
+}
+#footer .contact-child .form .btn-submit {
+  background: #ddd;
+  padding: 8px 12px;
+  float: right;
+  border: none;
+}
+
+@media screen and (max-width: 1100px) {
+  #header .header-section {
+    height: 60px;
+  }
+  #header .header-section .menu {
+    display: none;
+  }
+  #header .header-section .option {
+    display: block;
+  }
+  #header .header-section .option .menu {
+    z-index: 1;
+    position: absolute;
+    background: #333;
+    top: 60px;
+    transform: translateX(-40px);
+  }
+  #header .header-section .option .menu .subnav {
+    top: 154px;
+    left: 91px;
+  }
+  #header .header-section .option .menu .subnav .subnav {
+    top: 154px;
+    left: 100px;
+  }
+}
+.show-option {
+  display: block !important;
+}
+
+.show-modal {
+  display: flex !important;
+}
+
+.show-product {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}/*# sourceMappingURL=banner.css.map */

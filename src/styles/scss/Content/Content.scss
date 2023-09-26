@@ -1,0 +1,145 @@
+#content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height     : 100%;
+
+    .content-section {
+        height   : 1100px;
+        overflow : hidden;
+        max-width: 1600px;
+
+        .title-index {
+            justify-content: center;
+            align-items    : center;
+            height         : 80px;
+            display        : flex;
+
+            p {
+                color         : #333;
+                text-transform: uppercase;
+                font-weight   : bold;
+
+                font-size: 25px;
+
+            }
+        }
+
+        .product {
+            display : flex;
+            height  : 500px;
+            overflow: hidden;
+
+            .card {
+                position     : relative;
+                padding      : 20px 0;
+                background   : #ddd;
+                width        : 280px;
+                margin       : 20px auto;
+                border-radius: 20px;
+
+                .card-heart,
+                .card-cart {
+                    button {
+                        border    : none;
+                        font-size : 20px;
+                        background: #ddd;
+                    }
+
+                    position: absolute;
+                    padding : 5px;
+                    top     : 10px;
+                }
+
+                .card-heart {
+                    left : 20px;
+                    right: unset;
+                }
+
+                .card-cart {
+                    right: 20px;
+                    left : unset;
+                }
+
+                .card-img {
+                    height: 280px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .card-title,
+                .card-price {
+                    text-align: center;
+                    color     : #232323;
+                    top       : 0px;
+                    font-size : 18px;
+                }
+
+                .card-title {
+                    height: 27px;
+
+                    p {
+                        text-overflow: ellipsis;
+                        height       : 27px;
+                        white-space  : nowrap;
+                        overflow     : hidden;
+
+                    }
+                }
+
+                .card-price {
+                    margin-bottom: 20px;
+                }
+
+                .card-action {
+                    display        : flex;
+                    justify-content: space-between;
+                    margin         : 4px 20px;
+
+                    .buy,
+                    .cart {
+
+                        padding      : 12px 20px;
+                        border-radius: 20px;
+                        background   : #6a6a6a;
+                        color        : #dddddd;
+                        border       : none;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .see-more {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        margin         : 10px auto;
+        height         : 100px;
+
+        button {
+            padding      : 10px 20px;
+            font-family  : Verdana, Geneva, Tahoma, sans-serif;
+            background   : #ffffff;
+            border-radius: 5px;
+            border       : 2px solid #7a7979;
+        }
+    }
+
+    .news {
+        width          : 100%;
+        height         : 60px;
+        background     : #ddd;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+
+        p {
+            font-size  : 20px;
+            font-weight: bold;
+
+        }
+    }
+}

@@ -1,0 +1,101 @@
+#header {
+  background-color: #333;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+#header .header-section {
+  display: flex;
+  top: 0;
+  right: 0;
+  left: 0;
+  justify-content: space-around;
+  align-items: center;
+}
+#header .header-section .menu {
+  display: flex;
+  text-transform: uppercase;
+  margin: 0;
+  border: none;
+  max-width: 960px;
+}
+#header .header-section .menu .down {
+  font-size: 10px;
+  transform: translateX(-10px);
+  position: absolute;
+}
+#header .header-section .menu li:hover {
+  background: #8c8989;
+}
+#header .header-section .menu li {
+  padding: 18px;
+}
+#header .header-section .menu li:hover > .subnav {
+  display: block;
+}
+#header .header-section .menu li a {
+  font-size: 12px;
+  padding: 20px;
+  color: #ddd;
+}
+#header .header-section .menu .subnav {
+  position: absolute;
+  background: #333;
+  display: none;
+  padding-left: 0;
+  top: 60px;
+  transform: translateX(38px);
+}
+#header .header-section .menu .subnav li {
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+#header .header-section .menu .subnav li:hover {
+  border-bottom: 1px solid #000000;
+}
+#header .header-section .menu .subnav li:hover > .subnav {
+  display: block;
+}
+#header .header-section .menu .subnav li a a {
+  color: #000;
+  padding: 0 12px;
+}
+#header .header-section .menu .subnav:hover > ul.subnav1 {
+  display: block;
+}
+#header .header-section .menu .subnav .subnav {
+  position: absolute;
+  top: 154px;
+  left: 100px;
+}
+#header .header-section .option {
+  display: none;
+  display: none;
+}
+#header .header-section .option img {
+  height: 30px;
+  filter: brightness(0) invert(2);
+  -webkit-filter: brightness(0) invert(1);
+}
+#header .search-bar {
+  display: flex;
+  align-items: center;
+}
+#header .search-bar input {
+  border: 4px;
+}
+#header .search-bar .search {
+  padding: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  font-size: 20px;
+}
+#header .search-bar .search:hover {
+  background: #e46124;
+}
+#header .icon {
+  font-size: 32px;
+  padding: 0px 20px;
+  color: #ddd;
+}/*# sourceMappingURL=Banner.css.map */
