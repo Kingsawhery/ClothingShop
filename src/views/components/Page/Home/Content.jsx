@@ -1,5 +1,6 @@
-import ShowCard from "./Component-child/ShowCard";
-import "../../../styles/scss/Content/Content.css";
+import ShowCard from "../../../components/Component/Component-child/ShowCard";
+
+import "../../../../styles/scss/Content/Content.css";
 
 function Content() {
   return (

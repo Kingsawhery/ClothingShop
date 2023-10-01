@@ -2,16 +2,25 @@ import React from "react";
 import { data } from "../../../../store/data";
 import iconHeart from "../../../../assets/images/bx-heart.svg";
 import iconCart from "../../../../assets/images/bx-cart.svg";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function ShowCard() {
+  var callProduct = "http://localhost:3000/course";
+  const [data, setData] = useState([]);
+  useEffect(()=> {
+    fetch(callProduct)
+    .then(res => res.json())
+    .then(product => setData(product))
+    .catch(console.log("damn"))
+  },[])
   return data.map((course, index) => {
     if (index % 4 === 0) {
       return (
-        <div className="product row">
+        <div key={index} className="product row">
           {data.slice(index, index + 4).map((course, index) => {
             return (
-              <>
-                <div
+              <div
                   className="card col-lg-3 col-lg-6 col-md-6 col-sm-12"
                   key={index}
                 >
@@ -35,7 +44,8 @@ function ShowCard() {
                     <button className="cart">Add Cart</button>
                   </div>
                 </div>
-              </>
+                
+          
             );
           })}
         </div>

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import logo from "../../../assets/images/lemon-solid-24.png";
-import "../../../styles/scss/Banner/Banner.css";
-import barSolid from "../../../assets/images/bars-solid.svg";
+import logo from "../../../../assets/images/lemon-solid-24.png";
+import "../../../../styles/scss/Banner/Banner.css";
+import barSolid from "../../../../assets/images/bars-solid.svg";
 function Banner() {
   const [option, setOption] = useState(false);
   const [box, setBox] = useState(false);
   function closePopUp(e) {
+    console.log(e.which);
     switch (e.which) {
-      case 27:
+      case 75:
         setBox(false);
     }
   }
@@ -176,7 +177,7 @@ function Banner() {
               />
             </div>
             <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">
+              <label htmlFor="inputEmail4" className="form-label">
                 Email
               </label>
               <input type="email" class="form-control" id="inputEmail4" />
