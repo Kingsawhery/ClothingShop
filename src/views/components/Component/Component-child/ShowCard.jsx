@@ -1,19 +1,8 @@
 import React from "react";
-import { data } from "../../../../store/data";
 import iconHeart from "../../../../assets/images/bx-heart.svg";
 import iconCart from "../../../../assets/images/bx-cart.svg";
-import { useState } from "react";
-import { useEffect } from "react";
 
-function ShowCard() {
-  var callProduct = "http://localhost:3000/course";
-  const [data, setData] = useState([]);
-  useEffect(()=> {
-    fetch(callProduct)
-    .then(res => res.json())
-    .then(product => setData(product))
-    .catch(console.log("damn"))
-  },[])
+function ShowCard({data}) {
   return data.map((course, index) => {
     if (index % 4 === 0) {
       return (

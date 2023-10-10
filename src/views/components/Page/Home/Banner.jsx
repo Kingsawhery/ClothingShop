@@ -21,6 +21,14 @@ function Banner() {
   var classModal = box ? "show-modal" : "";
   var classOption = option ? "show-option menu" : "menu";
 
+  const Form = {
+    Input(){
+      return <input  type="email" className="form-control" id="inputEmail4"/>
+    },
+    Checkbox(){
+      return <input type="checkbox"/>
+    },
+  }
   // var tagModal = document.getElementById(".card-contact");
   return (
     <>
@@ -180,7 +188,7 @@ function Banner() {
               <label htmlFor="inputEmail4" className="form-label">
                 Email
               </label>
-              <input type="email" class="form-control" id="inputEmail4" />
+              <Form.Input/>
             </div>
             <div class="col-md-6">
               <label for="inputPassword4" class="form-label">

@@ -46,6 +46,7 @@
   padding-left: 0;
   top: 60px;
   transform: translateX(38px);
+  z-index: 99;
 }
 #header .header-section .menu .subnav li {
   color: #333;

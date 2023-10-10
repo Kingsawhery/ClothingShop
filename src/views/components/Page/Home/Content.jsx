@@ -1,8 +1,16 @@
 import ShowCard from "../../../components/Component/Component-child/ShowCard";
 
 import "../../../../styles/scss/Content/Content.css";
+import { useState,useEffect } from "react";
 
 function Content() {
+  var callProduct = "http://localhost:3000/course";
+  const [data, setData] = useState([]);
+  useEffect(()=> {
+    fetch(callProduct)
+    .then(res => res.json())
+    .then(product => setData(product))
+  },[])
   return (
     <>
       <div id="content">
@@ -10,7 +18,9 @@ function Content() {
           <div class="title-index">
             <p>New Arrivals</p>
           </div>
-          <ShowCard />
+          <ShowCard 
+          key = {data.id}
+          data = {data}/>
         </div>
       </div>
     </>
