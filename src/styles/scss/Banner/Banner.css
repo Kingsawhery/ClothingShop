@@ -3,7 +3,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1;
+  z-index: 99;
 }
 #header .header-section {
   display: flex;
@@ -19,6 +19,7 @@
   margin: 0;
   border: none;
   max-width: 960px;
+  font-size: 12px;
 }
 #header .header-section .menu .down {
   font-size: 10px;
@@ -29,15 +30,14 @@
   background: #8c8989;
 }
 #header .header-section .menu li {
-  padding: 18px;
-}
-#header .header-section .menu li:hover > .subnav {
-  display: block;
+  padding: 20px 28px;
 }
 #header .header-section .menu li a {
   font-size: 12px;
   padding: 20px;
-  color: #ddd;
+}
+#header .header-section .menu li a:hover > .subnav {
+  display: block;
 }
 #header .header-section .menu .subnav {
   position: absolute;

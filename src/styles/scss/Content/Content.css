@@ -12,12 +12,33 @@
   align-items: center;
   height: 80px;
   display: flex;
+  position: relative;
 }
 #content .content-section .title-index p {
   color: #333;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 25px;
+}
+#content .content-section .title-index .fil-product {
+  position: absolute;
+  right: 0;
+  display: flex;
+}
+#content .content-section .title-index .fil-product .type-product {
+  padding: 12px 24px;
+  margin: 4px;
+  width: 96px;
+  background-color: #ddd;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 8px;
+}
+#content .content-section .title-index .fil-product .type-product:hover {
+  transform: scale(0.95);
+  opacity: 0.8;
 }
 #content .content-section .product {
   display: flex;

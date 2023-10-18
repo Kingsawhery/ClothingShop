@@ -2,7 +2,18 @@ import React, { useState } from "react";
 import logo from "../../../../assets/images/lemon-solid-24.png";
 import "../../../../styles/scss/Banner/Banner.css";
 import barSolid from "../../../../assets/images/bars-solid.svg";
+import { Link } from "react-router-dom";
 function Banner() {
+  const categories = [
+    "Sản Phẩm",
+    "About Us",
+    "More",
+    "Blog",
+    "Channel",
+    "Contact",
+  ];
+  const subnavs = ["Menu1", "Menu2", "Menu3"];
+  const [tab, setTab] = useState("");
   const [option, setOption] = useState(false);
   const [box, setBox] = useState(false);
   function closePopUp(e) {
@@ -22,83 +33,48 @@ function Banner() {
   var classOption = option ? "show-option menu" : "menu";
 
   const Form = {
-    Input(){
-      return <input  type="email" className="form-control" id="inputEmail4"/>
+    Input() {
+      return <input type="email" className="form-control" id="inputEmail4" />;
     },
-    Checkbox(){
-      return <input type="checkbox"/>
+    Checkbox() {
+      return <input type="checkbox" />;
     },
-  }
+  };
   // var tagModal = document.getElementById(".card-contact");
   return (
     <>
       <div id="header">
         <div className="header-section container">
-          <a
-            href={`https://www.facebook.com/profile.php?id=100007275730549`}
-            className="icon"
-            target="_blank"
-          >
-            <a href=""></a>
+          <Link to="/">
             <img src={logo} alt="" style={{ width: 30 + "px" }} />
-          </a>
+          </Link>
           <div className="menu">
-            <li>
-              <a href={`https://www.youtube.com/`} target="_blank">
-                Band
-              </a>
-            </li>
-            <li>
-              <a href="#content">Product</a>
-            </li>
-            <li>
-              <a href="{}">More</a>
-
-              <i className="fa-solid fa-chevron-down down"></i>
-              <ul className="subnav">
-                <li>
-                  <a href="{}">HTML</a>
+            {categories.map((category, index) => {
+              return (
+                <li
+                  style={
+                    tab === category
+                      ? { background: "#ddd", color: "#333" }
+                      : {}
+                  }
+                  onClick={() => setTab(category)}
+                >
+                  <a>
+                    {category}
+                    <div className="subnav">
+                      {category === "More" &&
+                        subnavs.map((subnav) => {
+                          return (
+                            <li>
+                              <a>{subnav}</a>
+                            </li>
+                          );
+                        })}
+                    </div>
+                  </a>
                 </li>
-                <li>
-                  <a href="{}">CSS</a>
-                </li>
-                <li>
-                  <a href="{}">Javascript</a>
-                  <ul className="subnav">
-                    <li>
-                      <a href="{}">HTML</a>
-                    </li>
-                    <li>
-                      <a href="{}">CSS</a>
-                    </li>
-                    <li>
-                      <a href="{}">Javascript</a>
-                    </li>
-                    <li>
-                      <a href="{}">PHP</a>
-                    </li>
-                    <li>
-                      <a href="{}">Python</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="{}">PHP</a>
-                </li>
-                <li>
-                  <a href="{}">Python</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#img-bg">Blog</a>
-            </li>
-            <li>
-              <a href="{}">Channel</a>
-            </li>
-            <li className="contact" onClick={handleClickModal}>
-              <a>Contact</a>
-            </li>
+              );
+            })}
           </div>
           <li className="option" onClick={handleClickOption}>
             <img src={barSolid} className="color-danger" />
@@ -188,7 +164,7 @@ function Banner() {
               <label htmlFor="inputEmail4" className="form-label">
                 Email
               </label>
-              <Form.Input/>
+              <Form.Input />
             </div>
             <div class="col-md-6">
               <label for="inputPassword4" class="form-label">
