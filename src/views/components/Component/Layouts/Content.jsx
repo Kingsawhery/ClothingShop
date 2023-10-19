@@ -2,21 +2,27 @@ import ShowCard from "../Component-child/ShowCard";
 
 import "../../../../styles/scss/Content/Content.css";
 import { useState, useEffect } from "react";
-
+import ProductDetailModal from "../Component-child/DetailProduct";
 function Content() {
   const typeClothings = ["shirt", "pants"];
   const [typeProduct, setTypeProduct] = useState("shirt");
-
   const [data, setData] = useState([]);
   const [showProduct, setShowProduct] = useState(false);
-
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [indexProduct, setIndexProduct] = useState();
   useEffect(() => {
-    fetch(`http://localhost:3000/${typeProduct}`)
-      .then((res) => res.json())
-      .then((product) => setData(product));
+    setTimeout(() => {
+      fetch(`http://localhost:3000/${typeProduct}`)
+        .then((res) => res.json())
+        .then((product) => setData(product));
+    }, 200);
   }, [typeProduct]);
   function handleSeeMore() {
     setShowProduct(!showProduct);
+  }
+  function handleShowModal(data) {
+    
+    console.log(data);
   }
   return (
     <>
@@ -47,11 +53,14 @@ function Content() {
               })}
             </div>
           </div>
-          {data && <ShowCard data={data}></ShowCard>}
+          {data && (
+            <ShowCard handleShowModal={handleShowModal} data={data}></ShowCard>
+          )}
         </div>
         <div className="see-more" onClick={handleSeeMore}>
-          More
+          <p>{showProduct ? "Bớt" : "Thêm"}</p>
         </div>
+        {isOpenModal && <ProductDetailModal product={data[indexProduct]} />}
       </div>
     </>
   );

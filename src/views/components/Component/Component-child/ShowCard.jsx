@@ -1,40 +1,47 @@
 import React from "react";
 import iconHeart from "../../../../assets/images/bx-heart.svg";
 import iconCart from "../../../../assets/images/bx-cart.svg";
-
-function ShowCard({data}) {
+import { useState } from "react";
+function ShowCard({ data, handleShowModal }) {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [indexProduct, setIndexProduct] = useState(0);
   return data.map((course, index) => {
     if (index % 4 === 0) {
       return (
         <div key={index} className="product row">
           {data.slice(index, index + 4).map((course, index) => {
+            function handleShowDetailModal() {
+              setIndexProduct((prev) => course.id);
+              console.log(indexProduct);
+              handleShowModal(indexProduct);
+            }
             return (
               <div
-                  className="card col-lg-3 col-lg-6 col-md-6 col-sm-12"
-                  key={index}
-                >
-                  <div className="card-heart">
-                    <img src={iconHeart} alt="" />
-                  </div>
-                  <div className="card-cart">
-                    <button>
-                      <img src={iconCart} alt="Add to cart"></img>
-                    </button>
-                  </div>
-                  <div className="card-img">
-                    <img src={course.img} alt="" />
-                  </div>
-                  <div className="card-title">
-                    <p>{course.name}</p>
-                  </div>
-                  <div className="card-price">{course.price}$</div>
-                  <div className="card-action">
-                    <button className="buy">Buy Now</button>
-                    <button className="cart">Add Cart</button>
-                  </div>
+                className="card col-lg-3 col-lg-6 col-md-6 col-sm-12"
+                key={index}
+              >
+                <div className="card-heart">
+                  <img src={iconHeart} alt="" />
                 </div>
-                
-          
+                <div className="card-cart">
+                  <button>
+                    <img src={iconCart} alt="Add to cart"></img>
+                  </button>
+                </div>
+                <div className="card-img">
+                  <img src={course.img} alt="" />
+                </div>
+                <div className="card-title">
+                  <p>{course.name}</p>
+                </div>
+                <div className="card-price">{course.price}$</div>
+                <div className="card-action">
+                  <button className="buy" onClick={handleShowDetailModal}>
+                    Buy Now
+                  </button>
+                  <button className="cart">Add Cart</button>
+                </div>
+              </div>
             );
           })}
         </div>

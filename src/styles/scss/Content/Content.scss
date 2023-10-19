@@ -137,17 +137,14 @@
         display        : flex;
         justify-content: center;
         align-items    : center;
-        margin         : 10px auto;
-        height         : 100px;
-
-        button {
-            padding      : 10px 20px;
-            font-family  : Verdana, Geneva, Tahoma, sans-serif;
-            background   : #ffffff;
-            border-radius: 5px;
-            border       : 2px solid #7a7979;
+        p{
+            background: #ddd;
+            padding:12px 24px;
+            border-radius: 12px;
+            width: 88px;
+            text-align: center;
         }
-    }
+        }
 
     .news {
         width          : 100%;
