@@ -1,14 +1,12 @@
 import React from "react";
-import Banner from "../../views/components/Component/Layouts/Banner";
-import Slide from "../../views/components/Component/Layouts/Slide";
-import Content from "../../views/components/Component/Layouts/Content";
-import Map from "../../views/components/Component/Layouts/Map";
+import Banner from "../../views/components/Layouts/Banner";
+import Slide from "../../views/components/Layouts/Slide";
+import Content from "../../views/components/Layouts/Content";
 import "../../styles/scss/banner.css";
-function Web() {
+function Home() {
   return (
     <div className="main">
       <Banner />
-      {/* <CardTest /> */}
       <Slide />
       <Content />
     </div>
@@ -28,4 +26,4 @@ function Web() {
     //   />
   );
 }
-export default Web;
+export default Home;

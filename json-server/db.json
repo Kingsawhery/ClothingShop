@@ -1,7 +1,8 @@
 {
   "shirt": [
     {
-      "id":0,
+      "typeProduct": "shirt",
+      "id": 0,
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
@@ -9,86 +10,116 @@
       "img": "images/img1.png"
     },
     {
-      "id":1,
-      "name": "MONEYMAKER 'TEE IN TAN'",
+      "typeProduct": "shirt",
+      "id": 1,
+      "name": "'YACHT CLUB' $MAKER ON TOP",
       "price": 199,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
       "img": "images/img2.png"
     },
     {
-      "name": "MONEYMAKER 'TEE IN TAN'",
+      "typeProduct": "shirt",
+      "id": 2,
+      "name": "LIL DARY GANGSTER",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
       "img": "images/img3.png"
     },
     {
-      "name": "MONEYMAKER 'TEE IN TAN'",
+      "typeProduct": "shirt",
+      "id": 3,
+
+      "name": "'F1' GO FAST CAN'T WAIT",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
       "img": "images/img4.png"
     },
     {
-      "name": "MONEYMAKER 'TEE IN TAN'",
+      "typeProduct": "shirt",
+      "id": 4,
+
+      "name": "MONEYMAKER RACING CLUB",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
       "img": "images/img5.png"
     },
     {
-      "name": "MONEYMAKER 'TEE IN TAN'",
+      "typeProduct": "shirt",
+      "id": 5,
+
+      "name": "SKRT SKRT BAD HABBIT",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
       "img": "images/img6.png"
     },
     {
-      "name": "MONEYMAKER 'TEE IN TAN'",
+      "typeProduct": "shirt",
+      "id": 6,
+      "name": "'F1' GO FAST CAN'T WAIT",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
       "img": "images/img1.png"
     },
     {
-      "name": "MONEYMAKER 'TEE IN TAN'",
+      "typeProduct": "shirt",
+      "id": 7,
+
+      "name": "'YACHT CLUB' $MAKER ON TOP",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
       "img": "images/img2.png"
     },
     {
-      "name": "MONEYMAKER 'TEE IN TAN'",
+      "typeProduct": "shirt",
+      "id": 8,
+
+      "name": "LIL DARY GANGSTER",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
       "img": "images/img3.png"
     },
     {
-      "name": "MONEYMAKER 'TEE IN TAN'",
+      "typeProduct": "shirt",
+      "id": 9,
+
+      "name": "MONEYMAKER RACING CLUB",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
       "img": "images/img4.png"
     },
     {
-      "name": "MONEYMAKER 'TEE IN TAN'",
+      "typeProduct": "shirt",
+      "id": 10,
+
+      "name": "SKRT SKRT BAD HABBIT",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
       "img": "images/img5.png"
     },
     {
-      "name": "MONEYMAKER 'TEE IN TAN'",
+      "typeProduct": "shirt",
+      "id": 11,
+      "name": "'F1' GO FAST CAN'T WAIT",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
       "img": "images/img6.png"
     }
   ],
-  "pants": [
+  "pant": [
     {
+      "typeProduct": "pant",
+      "id": 0,
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
@@ -96,81 +127,107 @@
       "img": "images/pant1.png"
     },
     {
+      "typeProduct": "pant",
+      "id": 1,
       "name": "MONEYMAKER 'TEE IN TAN'",
-      "price": 99,
+      "price": 199,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
-      "img": "images/img2.png"
+      "img": "images/pant1.png"
     },
     {
+      "typeProduct": "pant",
+      "id": 2,
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
-      "img": "images/img3.png"
+      "img": "images/pant1.png"
     },
     {
+      "typeProduct": "pant",
+      "id": 3,
+
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
-      "img": "images/img4.png"
+      "img": "images/pant1.png"
     },
     {
+      "typeProduct": "pant",
+      "id": 4,
+
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
-      "img": "images/img5.png"
+      "img": "images/pant1.png"
     },
     {
+      "typeProduct": "pant",
+      "id": 5,
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
-      "img": "images/img6.png"
+      "img": "images/pant1.png"
     },
     {
+      "typeProduct": "pant",
+      "id": 6,
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
-      "img": "images/img1.png"
+      "img": "images/pant1.png"
     },
     {
+      "typeProduct": "pant",
+      "id": 7,
+
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
-      "img": "images/img2.png"
+      "img": "images/pant1.png"
     },
     {
+      "typeProduct": "pant",
+      "id": 8,
+
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
-      "img": "images/img3.png"
+      "img": "images/pant1.png"
     },
     {
+      "typeProduct": "pant",
+      "id": 9,
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
-      "img": "images/img4.png"
+      "img": "images/pant1.png"
     },
     {
+      "typeProduct": "pant",
+      "id": 10,
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
-      "img": "images/img5.png"
+      "img": "images/pant1.png"
     },
     {
+      "typeProduct": "pant",
+      "id": 11,
       "name": "MONEYMAKER 'TEE IN TAN'",
       "price": 99,
       "iconHeart": "bx-heart.svg",
       "iconCart": "bx-cart.svg",
-      "img": "images/img6.png"
+      "img": "images/pant1.png"
     }
   ]
 }

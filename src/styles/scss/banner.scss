@@ -15,8 +15,6 @@ li {
     color: #333;
 }
 
-
-
 #box-contact {
     background-color: rgba($color: #ddd, $alpha: 0.4);
     top             : 0;
@@ -28,7 +26,6 @@ li {
     align-items     : center;
     justify-content : center;
     z-index         : 99;
-    display         : none;
 
     .card-contact {
         border-radius: 8px;
@@ -129,15 +126,16 @@ li {
 
 @media screen and (max-width:1100px) {
     #header {
+        background-color: red;
         .header-section {
             height: 60px;
-
+            
             .menu {
-                display: none;
+                display: none!important;
             }
 
             .option {
-                display: block;
+                display: block!important;
 
                 .menu {
                     z-index   : 1;
@@ -145,9 +143,9 @@ li {
                     background: #333;
                     top       : 60px;
                     transform : translateX(-40px);
-
-
+                    display: none!important;
                     .subnav {
+                        display: none;
                         top : 154px;
                         left: 91px;
 
@@ -163,18 +161,7 @@ li {
     }
 }
 
-.show-option {
-    display: block !important;
-}
-
-.show-modal {
-    display: flex !important;
-}
 
 .show-product {
     height: 100%;
-}
-
-html {
-    scroll-behavior: smooth;
 }

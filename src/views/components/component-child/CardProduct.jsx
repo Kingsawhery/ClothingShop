@@ -1,31 +1,25 @@
-import React from "react";
-import iconHeart from "../../../../assets/images/bx-heart.svg";
-import iconCart from "../../../../assets/images/bx-cart.svg";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
-function ShowCard({ data, handleShowModal }) {
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const [indexProduct, setIndexProduct] = useState(0);
+function CardProduct({data}) {
   return data.map((course, index) => {
     if (index % 4 === 0) {
       return (
         <div key={index} className="product row">
           {data.slice(index, index + 4).map((course, index) => {
-            function handleShowDetailModal() {
-              setIndexProduct((prev) => course.id);
-              console.log(indexProduct);
-              handleShowModal(indexProduct);
-            }
+        
+            
             return (
               <div
                 className="card col-lg-3 col-lg-6 col-md-6 col-sm-12"
                 key={index}
               >
                 <div className="card-heart">
-                  <img src={iconHeart} alt="" />
+                  <img src="../../../images/bx-heart.svg" alt="" />
                 </div>
                 <div className="card-cart">
                   <button>
-                    <img src={iconCart} alt="Add to cart"></img>
+                    <img src="../../../images/bx-cart.svg" alt="Add to cart"></img>
                   </button>
                 </div>
                 <div className="card-img">
@@ -36,8 +30,8 @@ function ShowCard({ data, handleShowModal }) {
                 </div>
                 <div className="card-price">{course.price}$</div>
                 <div className="card-action">
-                  <button className="buy" onClick={handleShowDetailModal}>
-                    Buy Now
+                  <button className="buy">
+                    <Link to={`product/detail/${course.typeProduct}/${course.id}`}>Buy Now</Link>
                   </button>
                   <button className="cart">Add Cart</button>
                 </div>
@@ -50,4 +44,4 @@ function ShowCard({ data, handleShowModal }) {
     return null;
   });
 }
-export default ShowCard;
+export default CardProduct;

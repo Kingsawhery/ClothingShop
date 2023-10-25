@@ -1,0 +1,17 @@
+.main-footer {
+  padding-top: 20px;
+  background-color: #333;
+}
+
+.row .footer-title {
+  color: #dddddd;
+}
+.row .footer-content p {
+  color: #dddddd;
+}
+.row .footer-content ul {
+  padding: 0;
+}
+.row .footer-content img {
+  width: 236px;
+}/*# sourceMappingURL=footer.css.map */

@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./views/App";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/scss/banner.css";
-// import Banner from "./views/components/Page/Home/Banner";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>

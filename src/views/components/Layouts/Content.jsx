@@ -1,15 +1,16 @@
-import ShowCard from "../Component-child/ShowCard";
+import CardProduct from "../component-child/CardProduct";
+import "../../../../src/styles/scss/Content/Content.css";
+import { useState, useEffect,useRef } from "react";
+import {Link} from "react-router-dom"
+import ProductDetailModal from "../../../pages/Home/DetailProduct";
 
-import "../../../../styles/scss/Content/Content.css";
-import { useState, useEffect } from "react";
-import ProductDetailModal from "../Component-child/DetailProduct";
 function Content() {
-  const typeClothings = ["shirt", "pants"];
+  const typeClothings = ["Shirt", "Pant"];
   const [typeProduct, setTypeProduct] = useState("shirt");
   const [data, setData] = useState([]);
-  const [showProduct, setShowProduct] = useState(false);
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const [indexProduct, setIndexProduct] = useState();
+  const [count,setCount] = useState(0);
+const [showProduct,setShowProduct] = useState(false)
+const [isProductPage, setIsProductPage] = useState(false)
   useEffect(() => {
     setTimeout(() => {
       fetch(`http://localhost:3000/${typeProduct}`)
@@ -19,10 +20,7 @@ function Content() {
   }, [typeProduct]);
   function handleSeeMore() {
     setShowProduct(!showProduct);
-  }
-  function handleShowModal(data) {
-    
-    console.log(data);
+    setCount(prev => prev+1);
   }
   return (
     <>
@@ -54,13 +52,15 @@ function Content() {
             </div>
           </div>
           {data && (
-            <ShowCard handleShowModal={handleShowModal} data={data}></ShowCard>
+            <CardProduct
+              typeProduct={typeProduct}
+              data={data}
+            />
           )}
         </div>
-        <div className="see-more" onClick={handleSeeMore}>
-          <p>{showProduct ? "Bớt" : "Thêm"}</p>
+        <div className="see-more">
+          {count>0 ? (<Link className="see-more-btn" to="/product">See More</Link>) : (<p class="see-more-btn" onClick={handleSeeMore}>Xem thêm</p>)}
         </div>
-        {isOpenModal && <ProductDetailModal product={data[indexProduct]} />}
       </div>
     </>
   );
