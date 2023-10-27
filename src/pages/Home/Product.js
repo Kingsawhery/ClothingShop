@@ -2,27 +2,27 @@ import Content from "../../views/components/Layouts/Content";
 import { Link } from "react-router-dom";
 import "../../../src/styles/scss/Content/Content.css";
 import { useState, useEffect } from "react";
-import CardProduct from "../../views/components/component-child/ListProduct";
+import ListProduct from "../../views/components/component-child/ListProduct";
 import axios from "axios";
+import { fetchProduct } from "../../services/ProductService";
+import { Spinner } from "react-bootstrap";
 function Product() {
-  const [pants, setPants] = useState([]);
-  const [shirts, setShirts] = useState([]);
 const [data,setData] = useState([])
   const [count, setCount] = useState(0);
   const [showProduct, setShowProduct] = useState(false);
-  const [isProductPage, setIsProductPage] = useState(false);
-
+  const [loading,setLoading] = useState(true);
   useEffect(() => {
-    axios.get(`http://localhost:3000/shirt`)
-    .then(res => setData(res.data))
+      setTimeout(()=>{
+        getProduct();
+      setLoading(false)
+      },2000)
   },[])
-  // useEffect(() => {
-  //   axios.get(`http://localhost:3000/pant`)
-  //   .then(res => setPants(res.data))
-  //   setData([...pants,...shirts])
-
-  // },[])
-  
+  const getProduct = async()=>{
+      let res = await fetchProduct("shirt");
+      if(res ){
+        setData(res);
+      }
+  }
   data.sort(function() {  
     return Math.random() - 0.5
 })
@@ -42,8 +42,15 @@ const [data,setData] = useState([])
               <p>All Product</p>
             </div>
 
-            {data && <CardProduct data={data} />}
-          </div>
+            {loading ? (
+            <div className="d-flex justify-content-center">
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            </div>
+          ) : (
+            data && <ListProduct data={data} />
+          )}          </div>
           <div className="see-more">
             <p class="see-more-btn" onClick={handleSeeMore}>
               Xem thêm

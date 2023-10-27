@@ -4,9 +4,13 @@ import ReactPaginate from "react-paginate";
 function ListUsers() {
   const [totalPage, setTotalPage] = useState(0);
   const [users, setUsers] = useState([]);
+  const [loading,setLoading] = useState(true)
   useEffect(() => {
-    getUser(1);
-  }, []);
+    setTimeout(()=>{
+        getUser(1);
+        setLoading(false)
+    },2000)
+}, []);
   const getUser = async (page) => {
     let res = await fetchUsers(page);
     if (res && res.data) {
@@ -20,6 +24,7 @@ function ListUsers() {
   }
   return (
     <>
+    <div className="container mt-0">
       <table className="table">
         <thead>
           <tr>
@@ -29,19 +34,21 @@ function ListUsers() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user, index) => {
+
+          {loading ?   users.map((user, index) => {
             return (
               <tr key={index}>
                 <td>{user.id}</td>
                 <td>{user.email}</td>
                 <td>
-                  {user.firstName} {user.lastName}
+                  {user.first_name} {user.last_name}
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      </div>
       <ReactPaginate
         breakLabel="..."
         nextLabel="next >"

@@ -2,9 +2,6 @@ import React, { useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import CardProduct from "./CardProduct";
 function ListProduct({ data }) {
-  function handlePageClick(){
-
-  }
   return data.map((course, index) => {
     if (index % 4 === 0) {
       return (
