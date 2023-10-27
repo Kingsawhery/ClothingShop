@@ -1,27 +1,32 @@
-import CardProduct from "../component-child/CardProduct";
+import ListProduct from "../component-child/ListProduct";
 import "../../../../src/styles/scss/Content/Content.css";
-import { useState, useEffect,useRef } from "react";
-import {Link} from "react-router-dom"
-import ProductDetailModal from "../../../pages/Home/DetailProduct";
-
+import { Link } from "react-router-dom";
+import Video from "./Video";
+import { fetchProduct } from "../../../services/ProductService";
+import { useEffect, useState ,useLayoutEffect} from "react";
+import ReactPaginate from "react-paginate";
 function Content() {
   const typeClothings = ["Shirt", "Pant"];
   const [typeProduct, setTypeProduct] = useState("shirt");
   const [data, setData] = useState([]);
-  const [count,setCount] = useState(0);
-const [showProduct,setShowProduct] = useState(false)
-const [isProductPage, setIsProductPage] = useState(false)
+  const [count,setCount] = useState(0)
+  const [showProduct, setShowProduct] = useState(false);
+  const [totalPage,setTotalPage] = useState(0)
   useEffect(() => {
-    setTimeout(() => {
-      fetch(`http://localhost:3000/${typeProduct}`)
-        .then((res) => res.json())
-        .then((product) => setData(product));
-    }, 200);
+    getProduct();
   }, [typeProduct]);
+  const getProduct = async () => {
+    let res = await fetchProduct(typeProduct);
+    if (res) {
+      setData(res);
+      setTotalPage(res.length/4)
+}
+  };
   function handleSeeMore() {
     setShowProduct(!showProduct);
-    setCount(prev => prev+1);
+    setCount((prev) => prev + 1);
   }
+  function handlePageClick() {}
   return (
     <>
       <div id="content">
@@ -36,6 +41,7 @@ const [isProductPage, setIsProductPage] = useState(false)
                 return (
                   <div
                     className="type-product"
+                    key={typeClothing}
                     style={
                       typeProduct === typeClothing
                         ? { background: "#333", color: "#ddd" }
@@ -51,15 +57,14 @@ const [isProductPage, setIsProductPage] = useState(false)
               })}
             </div>
           </div>
-          {data && (
-            <CardProduct
-              typeProduct={typeProduct}
-              data={data}
-            />
-          )}
+          {data && <ListProduct typeProduct={typeProduct} data={data} />}
         </div>
         <div className="see-more">
-          {count>0 ? (<Link className="see-more-btn" to="/product">See More</Link>) : (<p class="see-more-btn" onClick={handleSeeMore}>Xem thêm</p>)}
+          {count>0 ? (<Link className="see-more-btn" to="/products">See More</Link>) : (<p class="see-more-btn" onClick={handleSeeMore}>Xem thêm</p>)}
+        </div>
+        
+        <div id="video-produce">
+          <Video></Video>
         </div>
       </div>
     </>

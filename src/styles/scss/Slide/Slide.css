@@ -1,6 +1,6 @@
 #carouselExampleIndicator .carousel-item img {
-  width: 1260px;
-  height: 710px;
+  width: 1280px;
+  height: 200px !important;
 }
 
 .carousel {

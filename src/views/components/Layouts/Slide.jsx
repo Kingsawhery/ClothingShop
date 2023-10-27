@@ -1,7 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "../../../../src/styles/scss/Slide/Slide.css";
-
 function Slide() {
   return (
     <Carousel>

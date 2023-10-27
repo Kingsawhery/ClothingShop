@@ -127,4 +127,9 @@
   width: 88px;
   text-align: center;
   cursor: pointer;
+  color: #333;
+}
+
+#video-produce {
+  background-color: #dddddd;
 }/*# sourceMappingURL=Content.css.map */

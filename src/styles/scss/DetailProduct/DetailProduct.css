@@ -1,0 +1,19 @@
+.detail-product {
+  display: flex;
+  justify-content: center;
+  margin: 80px 40px;
+}
+.detail-product .image-product, .detail-product .info-product {
+  width: 600px;
+}
+.detail-product .image-product {
+  display: grid;
+  background-color: red;
+}
+.detail-product .image-product .img1 {
+  width: 300px;
+  height: 300px;
+}
+.detail-product .info-product {
+  background-color: blue;
+}/*# sourceMappingURL=DetailProduct.css.map */

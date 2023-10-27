@@ -1,0 +1,20 @@
+.form-login {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+.form-login .form {
+  background-color: #333;
+  border-radius: 12px;
+  padding: 20px;
+}
+.form-login .form .form-label, .form-login .form .form-check-label {
+  color: #dddddd;
+}/*# sourceMappingURL=Form.css.map */

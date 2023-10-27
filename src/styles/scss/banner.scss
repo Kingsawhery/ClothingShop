@@ -11,6 +11,9 @@ li {
     cursor         : pointer;
     list-style     : none;
 }
+a:hover{
+    color:inherit;
+}
 .mystyle {
     color: #333;
 }
@@ -43,17 +46,6 @@ li {
         }
     }
 }
-
-
-
-
-
-#img-bg {
-
-    background: url("../../assets/images/img1.webp") no-repeat;
-    height    : 100%;
-}
-
 #footer {
     height     : 100%;
     border-top : 1px solid #ddd;

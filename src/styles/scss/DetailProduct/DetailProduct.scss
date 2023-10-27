@@ -1,0 +1,19 @@
+.detail-product{
+    display: flex;
+    justify-content: center;
+    margin:80px 40px;
+    .image-product,.info-product{
+        width: 600px;
+    }
+    .image-product{
+        display: grid;
+        background-color: red;
+        .img1{
+            width: 300px;
+            height: 300px;
+        }
+    }
+    .info-product{
+        background-color: blue;
+    }
+}

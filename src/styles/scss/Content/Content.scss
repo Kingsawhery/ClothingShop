@@ -144,7 +144,6 @@ transition: 10s;
         display: flex;
         justify-content: center;
         align-items: center;
-
         .see-more-btn {
             background: #ddd;
             margin-top:20px;
@@ -153,7 +152,12 @@ transition: 10s;
             width: 88px;
             text-align: center;
             cursor: pointer;
+            color:#333;
+
         }
     }
 
+}
+#video-produce{
+    background-color: #dddddd;
 }

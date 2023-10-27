@@ -118,7 +118,7 @@
                 <div class="footer-static-content">
                   <div
                     class="fb-page fb_iframe_widget"
-                    data-href="https://www.facebook.com/TSUN.SG"
+                    data-href="https://www.facebook.com/profile.php?id=100007275730549"
                     data-height="300"
                     data-small-header="false"
                     data-adapt-container-width="true"
