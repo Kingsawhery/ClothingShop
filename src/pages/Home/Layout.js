@@ -5,7 +5,7 @@ function Layouts() {
   return (
     <>
       <Banner />
-      <div style={{marginTop :"70px"}}><Outlet/></div>
+      <div id="main"><Outlet/></div>
 
       <Footer/>
     </>

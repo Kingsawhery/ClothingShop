@@ -4,7 +4,7 @@ import "../../../src/styles/scss/Content/Content.css";
 import { useState, useEffect } from "react";
 import ListProduct from "../../views/components/component-child/ListProduct";
 import axios from "axios";
-import { fetchProduct } from "../../services/ProductService";
+import { fetchAllProduct } from "../../services/ProductService";
 import { Spinner } from "react-bootstrap";
 function Product() {
 const [data,setData] = useState([])
@@ -12,15 +12,13 @@ const [data,setData] = useState([])
   const [showProduct, setShowProduct] = useState(false);
   const [loading,setLoading] = useState(true);
   useEffect(() => {
-      setTimeout(()=>{
         getProduct();
-      setLoading(false)
-      },2000)
   },[])
   const getProduct = async()=>{
-      let res = await fetchProduct("shirt");
-      if(res ){
+      let res = await fetchAllProduct();
+      if(res){
         setData(res);
+        setLoading(false)
       }
   }
   data.sort(function() {  
@@ -36,9 +34,9 @@ const [data,setData] = useState([])
         <div id="content">
           <div
             style={showProduct ? { height: "100%" } : {}}
-            class="content-section container"
+            className="content-section container"
           >
-            <div class="title-index">
+            <div className="title-index">
               <p>All Product</p>
             </div>
 
@@ -52,7 +50,7 @@ const [data,setData] = useState([])
             data && <ListProduct data={data} />
           )}          </div>
           <div className="see-more">
-            <p class="see-more-btn" onClick={handleSeeMore}>
+            <p className="see-more-btn" onClick={handleSeeMore}>
               Xem thêm
             </p>{" "}
           </div>

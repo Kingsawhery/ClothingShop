@@ -20,80 +20,17 @@ a:hover {
   color: #333;
 }
 
-#box-contact {
-  background-color: rgba(221, 221, 221, 0.4);
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 99;
+.loading {
+  height: 257px;
 }
-#box-contact .card-contact {
-  border-radius: 8px;
-  background: #333;
+.loading .spinner-border {
+  width: 100px;
+  height: 100px;
 }
-#box-contact .card-contact form {
-  padding: 40px;
-}
-#box-contact .card-contact form .header-contact {
-  display: flex;
-  justify-content: space-between;
-}
-#footer {
-  height: 100%;
-  border-top: 1px solid #ddd;
-  padding-top: 20px;
-  top: 0;
-  bottom: 0;
-  display: block;
-}
-#footer .contact {
-  padding-bottom: 30px;
-  text-align: center;
-}
-#footer .contact h2 {
-  padding: 20px;
-}
-#footer .contact-child {
-  display: flex;
-  justify-content: space-around;
-  padding-bottom: 100px;
-}
-#footer .contact-child .link {
-  display: block;
-  width: 13%;
-  text-align: start;
-}
-#footer .contact-child .link a {
-  display: block;
-  padding: 0.3em;
-  color: #333;
-}
-#footer .contact-child .link i {
-  padding-right: 10px;
-}
-#footer .contact-child .form .row .col {
-  float: left;
-  padding: 0 0px 12px 8px;
-}
-#footer .contact-child .form .row .col-half {
-  width: 50%;
-}
-#footer .contact-child .form .row .col-full {
-  width: 100%;
-}
-#footer .contact-child .form .row .col-full input {
-  width: 100%;
-}
-#footer .contact-child .form .btn-submit {
-  background: #ddd;
-  padding: 8px 12px;
-  float: right;
-  border: none;
+
+#main {
+  margin-top: 70px;
+  min-height: 370px;
 }
 
 @media screen and (max-width: 1100px) {

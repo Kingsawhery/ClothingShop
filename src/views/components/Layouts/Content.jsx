@@ -6,8 +6,11 @@ import { fetchProduct } from "../../../services/ProductService";
 import { useEffect, useState, useLayoutEffect } from "react";
 import ReactPaginate from "react-paginate";
 import Spinner from "react-bootstrap/Spinner";
+import axios from "axios";
 
 function Content() {
+  console.log("Content");
+
   const typeClothings = ["Shirt", "Pant"];
   const [typeProduct, setTypeProduct] = useState("shirt");
   const [data, setData] = useState([]);
@@ -28,6 +31,7 @@ function Content() {
       setTotalPage(res.length / 4);
     }
   };
+
   function handleSeeMore() {
     setShowProduct(!showProduct);
     setCount((prev) => prev + 1);
@@ -38,9 +42,9 @@ function Content() {
       <div id="content">
         <div
           style={showProduct ? { height: "100%" } : {}}
-          class="content-section container"
+          className="content-section container"
         >
-          <div class="title-index">
+          <div className="title-index">
             <p>New Arrivals</p>
             <div className="fil-product">
               {typeClothings.map((typeClothing) => {
@@ -70,7 +74,10 @@ function Content() {
               </Spinner>
             </div>
           ) : (
-            data && <ListProduct typeProduct={typeProduct} data={data} />
+            data &&
+            data.length > 0 && (
+              <ListProduct typeProduct={typeProduct} data={data} />
+            )
           )}
         </div>
         <div className="see-more">
@@ -79,7 +86,7 @@ function Content() {
               See More
             </Link>
           ) : (
-            <p class="see-more-btn" onClick={handleSeeMore}>
+            <p className="see-more-btn" onClick={handleSeeMore}>
               Xem thêm
             </p>
           )}

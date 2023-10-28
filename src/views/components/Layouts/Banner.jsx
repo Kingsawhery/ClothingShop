@@ -11,6 +11,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack';
 function Banner() {
+  console.log("Banner");
+
   const logo = useRef(null);
   const optionBar = useRef();
 
@@ -26,7 +28,7 @@ function Banner() {
     "products",
     "about",
     "more",
-    "blog",
+    "blogs",
     "channel",
     "contact",
   ];
@@ -34,14 +36,13 @@ function Banner() {
   const [tab, setTab] = useState("");
   const [option, setOption] = useState(false);
   const [form, setForm] = useState(false);
+  const [action,setAction] = useState("");
   function closePopUp(e) {
     console.log(e.which);
     switch (e.which) {
       case 75:
     }
   }
-  console.log(logo);
-
   useEffect(() => {
     var logoAnimation = logo.current.animate(
       [
@@ -123,6 +124,7 @@ function Banner() {
                     ) : (
                       <Link to={`/${categoryRoute}`}>
                         {categories[index]}
+                  
                         <div className="subnav">
                           {categories[index] === "More" &&
                             subnavs.map((subnav,index) => {
@@ -134,6 +136,7 @@ function Banner() {
                             })}
                         </div>
                       </Link>
+                      
                     )}
                   </li>
                 );
@@ -142,9 +145,15 @@ function Banner() {
           </li>
 
           <Stack direction="horizontal" gap={2}>
-            <FontAwesomeIcon icon={faUser} />
+            <FontAwesomeIcon icon={faUser} onClick={()=>{
+              setForm(true)
+              setAction("Đăng nhập")
+            }}/>
             <div className="vr" />
-            <FontAwesomeIcon icon={faUser} />
+            <FontAwesomeIcon icon={faUser} onClick={()=>{
+              setForm(true)
+              setAction("Đăng ký")
+            }}/>
             <Form.Control
               className="me-auto" style={{width:"200px"}}
               placeholder="Add your item here..."
@@ -152,7 +161,7 @@ function Banner() {
           </Stack>
         </div>
       </div>
-      {form && <FormLogin />}
+      {form && <FormLogin form={form} action={action} setForm={setForm} />}
     </>
   );
 }
