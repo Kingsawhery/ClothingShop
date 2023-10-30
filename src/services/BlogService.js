@@ -6,3 +6,5 @@ export function fetchBlogs(){
 export function fetchCreateBlog(data){
     return instanceBlogs.post("/posts",data);
 }
+
+

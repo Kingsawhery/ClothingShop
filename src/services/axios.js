@@ -14,7 +14,7 @@ const instanceUsers = axios.create({
     baseURL:"https://reqres.in"
 })
 instanceUsers.interceptors.response.use((response)=>{
-    return response.data;
+    return response.data ? response.data : {statusCode : response.status};
 },function(error){
     return Promise.reject(error);
 })
@@ -23,7 +23,7 @@ const instanceBlogs = axios.create({
     baseURL:"https://jsonplaceholder.typicode.com"
 })
 instanceBlogs.interceptors.response.use((response)=>{
-    return response.data;
+    return response.data ? response.data : {statusCode : response.status};
 },function(error){
     return Promise.reject(error);
 })

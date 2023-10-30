@@ -2,7 +2,7 @@ import { Modal,Form,Button } from "react-bootstrap"
 import "../../../styles/scss/ModalAddBlog/ModalAddBlog.css"
 import { useEffect,useState } from "react"
 import { fetchCreateBlog } from "../../../services/BlogService"
-export default function ModalAddBlog({modalAdd,setModalAdd,blogs,setBlogs}){
+export default function ModalAddBlog({modalAdd,setModalAdd,newBlogs,setNewBlogs}){
     console.log("ModalAddBlog");
     const [title,setTitle] = useState("")
     const [content,setContent] = useState("")
@@ -19,8 +19,11 @@ export default function ModalAddBlog({modalAdd,setModalAdd,blogs,setBlogs}){
         const createBlog = async()=>{
             let res = await fetchCreateBlog(data);
             if(res || res.data){
-                setBlogs([res,...blogs])
-                console.log(res);
+                setNewBlogs([res,...newBlogs])
+                console.log(newBlogs);
+            }
+            else{
+              setNewBlogs(newBlogs)
             }
         }
         createBlog();

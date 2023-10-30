@@ -28,13 +28,11 @@ const ProductDetail = () => {
       </Spinner>
     </div>
   ) : (
-    data && data.length > 0 &&
-    <div className="detail-product container">
-      <div className="image-product">
-        <img src="../../../images/img1.jpg" class="img1"></img>
+    data && (
+      <div className="detail-product container">
+        <div className="info-product">{data.name}</div>
       </div>
-      <div className="info-product">{data.name}</div>
-    </div>
+    )
   );
 };
 
